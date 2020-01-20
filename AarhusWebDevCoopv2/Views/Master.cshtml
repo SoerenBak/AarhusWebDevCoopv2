@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Master>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="@Umbraco.Field("metaDescription")">
+    <meta name="keywords" content="@Umbraco.Field("metaKeywords")">
+    <meta name="author" content="AarhusWebDevCoop">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/StyleSheet1.css" rel="stylesheet" />
+
+    <title>@CurrentPage.Name</title>
+
+    <!-- Bootstrap core CSS -->
+   
+
+</head>
+
+<body>
+    <div class="container">
+        @Umbraco.RenderMacro("mainMenu")
+    </div>
+
+        @RenderBody()
+        
+        
+   @*<footer><p>@Umbraco.Field("footer")</p></footer>*@
+
+    <div class="container">
+        <br /><footer><p>Copyright 2019: AarhusWebDevCoopv2</p></footer>
+    </div>
+    
+   
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+</body>
+</html>

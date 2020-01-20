@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ArticlesMain>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+
+
+@{
+    var selection = Model.Content.Site().FirstChild("articlesMain").Children("articlesItem").Where(x => x.IsVisible()).OrderBy("CreateDate");
+}
+
+
+
+<br />
+<div class="col-lg-12">
+    <div class="container">
+        
+        <h2>@Umbraco.Field("articlesTitle")</h2>
+        <p>@Umbraco.Field("articlesBodyText")</p>
+        <ul class="list-group">
+            @foreach (var item in selection)
+            {
+                <li class="list-group-item">
+                    <a href="@item.Url">@item.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
